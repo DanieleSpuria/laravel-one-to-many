@@ -19,6 +19,10 @@ class Project extends Model
       'description'
     ];
 
+    public function type() {
+      $this->belongsTo(Type::class);
+    }
+
     public static function generateSlug($str){
       $slug = Str::slug($str, '-');
       $original_slug = $slug;
