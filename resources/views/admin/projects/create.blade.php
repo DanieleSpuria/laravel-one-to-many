@@ -29,7 +29,12 @@
         <select class="form-select" aria-label="Default select example" name="type_id" id="type_id">
           <option selected>Choose the type of project</option>
           @foreach ($types as $type)
-            <option value="{{ $type->id }}">{{ $type->name }}</option>
+            <option
+              value="{{ $type->id }}"
+              @if ($type->id == old('type_id')) selected @endif
+            >
+              {{ $type->name }}
+            </option>
           @endforeach
         </select>
       </div>
