@@ -12,7 +12,7 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        @vite(['resources/scss/guestApp.scss', 'resources/js/guestApp.js'])
+        @vite(['resources/js/guestApp.js'])
     </head>
     <body>
 

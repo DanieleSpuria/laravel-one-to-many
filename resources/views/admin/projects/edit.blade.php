@@ -26,6 +26,21 @@
       </div>
 
       <div class="mb-3">
+        <label for="type" class="form-label">Type</label>
+        <select class="form-select" aria-label="Default select example" name="type_id" id="type_id">
+          <option selected>Choose the type of project</option>
+          @foreach ($types as $type)
+            <option
+              value="{{ $type->id }}"
+              @if ($type->id == old('type_id', $project->type?->id)) selected @endif
+            >
+              {{ $type->name }}
+            </option>
+          @endforeach
+        </select>
+      </div>
+
+      <div class="mb-3">
         <label for="date" class="form-label">Date</label>
         <input type="date" class="form-control @error('date') is-invalid @enderror" id="date" name="date" value="{{ old('date', $project->date) }}">
         @error('date')
