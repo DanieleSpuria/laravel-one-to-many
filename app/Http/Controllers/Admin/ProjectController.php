@@ -30,7 +30,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-      return view('admin.projects.create');
+      $types = Type::all();
+      return view('admin.projects.create', compact('types'));
     }
 
     /**
@@ -47,6 +48,7 @@ class ProjectController extends Controller
       if (array_key_exists('image', $form_data)) {
         $form_data['image_name'] = $request->file('image')->getClientOriginalName();
         $form_data['image_path'] = Storage::put('uploads', $form_data['image']);
+
       }
 
       $new_project = new Project();
