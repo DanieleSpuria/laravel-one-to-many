@@ -3,6 +3,7 @@
 @section('content')
   <div class="container my-5">
     <h2>{{ $project->title }}</h2>
+    <span class="badge text-bg-info">{{ $project->type?->name }}</span>
     <span class="d-block my-2">Date: {{ $project->date }}</span>
     <img class="w-75 my-2" src="{{ asset('storage/' . $project->image_path) }}" alt="{{ $project->image_name }}">
     <p>{{ $project->description }}</p>

@@ -11,7 +11,7 @@ class Type extends Model
     use HasFactory;
 
     public function projects() {
-      $this->hasMany(Project::class);
+      return $this->hasMany(Project::class);
     }
 
     public static function generateSlug($str){

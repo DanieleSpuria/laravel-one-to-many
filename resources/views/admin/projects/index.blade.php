@@ -13,6 +13,7 @@
         <tr>
           <th scope="col">Id</th>
           <th scope="col">Title</th>
+          <th scope="col">Category</th>
           <th scope="col">Date</th>
           <th scope="col">Action</th>
         </tr>
@@ -22,6 +23,11 @@
           <tr>
             <td>{{ $project->id }}</td>
             <td>{{ $project->title }}</td>
+            <td>
+              <span class="badge text-bg-info">
+                {{ $project->type?->name }}
+              </span>
+            </td>
             <td>{{ $project->date }}</td>
             <td>
               <a class="btn btn-primary" href="{{ route('admin.projects.show', $project) }}">View</a>
